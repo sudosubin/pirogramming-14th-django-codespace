@@ -59,3 +59,15 @@ def article_update(request, pk):
 
     url = reverse('diary:article_read', kwargs={'pk': pk})
     return redirect(url)
+
+
+@csrf_exempt
+def article_delete(request, pk):
+    if request.method == 'GET':
+        return redirect('/')
+
+    # POST
+    article = Article.objects.get(id=pk)
+    article.delete()
+
+    return redirect('/')
