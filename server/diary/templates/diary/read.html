@@ -1,3 +1,5 @@
 <h2>{{ article.title }}</h2>
 
+<a href="{% url "diary:article_update" article.id %}">일기 수정하기</a>
+
 <p>{{ article.content }}</p>
