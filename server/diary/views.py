@@ -13,7 +13,7 @@ from diary.models import Article
 
 
 def article_list(request):
-    articles = Article.objects.all()
+    articles = Article.objects.all().order_by('-id')
     context = {
         'articles': articles,
     }
